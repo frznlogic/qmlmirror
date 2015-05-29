@@ -39,6 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
+import net.weatherinfo.weatherinfo 1.0
 
 Item {
     id: container
@@ -46,7 +47,7 @@ Item {
     property string weatherIcon: "01d"
 
     //server icons are too small. we keep using the local images
-    property bool useServerIcon: true
+    property bool useServerIcon: false
 
     Image {
         id: img

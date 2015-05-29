@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>weather-few-clouds.png</file>
+        <file>weather-fog.png</file>
+        <file>weather-haze.png</file>
+        <file>weather-icy.png</file>
+        <file>weather-overcast.png</file>
+        <file>weather-showers.png</file>
+        <file>weather-sleet.png</file>
+        <file>weather-snow.png</file>
+        <file>weather-storm.png</file>
+        <file>weather-sunny.png</file>
+        <file>weather-sunny-very-few-clouds.png</file>
+        <file>weather-thundershower.png</file>
+    </qresource>
+    <qresource prefix="/components">
+        <file>BigForecastIcon.qml</file>
+        <file>ForecastIcon.qml</file>
+        <file>WeatherIcon.qml</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>WeatherInfo.qml</file>
+    </qresource>
+</RCC>

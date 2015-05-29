@@ -39,9 +39,8 @@
 ****************************************************************************/
 
 import QtQuick 2.0
-import "components"
+import net.frozentux.weatherinfo 1.0
 //! [0]
-import WeatherData 1.0
 
 Item {
     id: window
