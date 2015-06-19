@@ -51,6 +51,7 @@ Item {
     Text {
         text: current.topText
         font.pointSize: 28
+        color: "white"
         anchors {
             top: current.top
             left: current.left
@@ -70,6 +71,7 @@ Item {
 
     Text {
         text: current.bottomText
+        color: "white"
         font.pointSize: 23
         wrapMode: Text.WordWrap
         width: parent.width

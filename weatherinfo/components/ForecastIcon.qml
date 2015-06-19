@@ -52,6 +52,8 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         width: top.width
         text: top.topText
+        color: "white"
+
 
         anchors.top: parent.top
         anchors.topMargin: top.height / 5 - dayText.paintedHeight
@@ -81,6 +83,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         width: top.width
         text: top.bottomText
+        color: "white"
 
         anchors.bottom: parent.bottom
         anchors.bottomMargin: top.height / 5 - tempText.paintedHeight

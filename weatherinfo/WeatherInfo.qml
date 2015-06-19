@@ -96,43 +96,6 @@ Item {
                 topMargin: 6; bottomMargin: 6; leftMargin: 6; rightMargin: 6
             }
 
-            Rectangle {
-                width: parent.width
-                height: 25
-                color: "lightgrey"
-
-                Text {
-                    text: (model.hasValidCity ? model.city : "Unknown location") + (model.useGps ? " (GPS)" : "")
-                    anchors.fill: parent
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        if (model.useGps) {
-                            model.useGps = false
-                            model.city = "Brisbane"
-                        } else {
-                            switch (model.city) {
-                            case "Brisbane":
-                                model.city = "Oslo"
-                                break
-                            case "Oslo":
-                                model.city = "Helsinki"
-                                break
-                            case "Helsinki":
-                                model.city = "New York"
-                                break
-                            case "New York":
-                                model.useGps = true
-                                break
-                            }
-                        }
-                    }
-                }
-            }
 
 //! [3]
             BigForecastIcon {

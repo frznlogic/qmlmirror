@@ -30,8 +30,6 @@ ApplicationWindow {
         width: 360
         height: 480
         color: "black"
-        border.color: "grey"
-        border.width: 0
     }
 
 }
