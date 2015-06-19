@@ -1,2 +1,19 @@
-module Weather
+module net.frozentux.weatherinfo
 plugin WeatherData
+plugin AppModel
+WeatherInfo 1.0 qrc:///WeatherInfo.qml
+BigForecastIcon 1.0 qrc:///components/BigForecastIcon.qml
+ForecastIcon 1.0 qrc:///components/ForecastIcon.qml
+WeatherIcon 1.0 qrc:///components/WeatherIcon.qml
+weather-few-clouds.png 1.0 qrc:///icons/weather-few-clouds.png
+weather-fog.png 1.0 qrc:///icons/weather-fog.png
+weather-haze.png 1.0 qrc:///icons/weather-haze.png
+weather-icy.png 1.0 qrc:///icons/weather-icy.png
+weather-overcast.png 1.0 qrc:///icons/weather-overcast.png
+weather-showers.png 1.0 qrc:///icons/weather-showers.png
+weather-sleet.png 1.0 qrc:///icons/weather-sleet.png
+weather-snow.png 1.0 qrc:///icons/weather-snow.png
+weather-storm.png 1.0 qrc:///icons/weather-storm.png
+weather-sunny-very-few-clouds.png 1.0 qrc:///icons/weather-sunny-very-few-clouds.png
+weather-sunny.png 1.0 qrc:///icons/weather-sunny.png
+weather-thundershower.png 1.0 qrc:///icons/weather-thundershower.png
