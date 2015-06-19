@@ -15,6 +15,6 @@ HEADERS += appmodel.h \
 qmldirfile.path = $$[QT_INSTALL_QML]/net/frozentux/weatherinfo
 qmldirfile.files = qmldir
 INSTALLS += qmldirfile
-#PRE_TARGETDEPS += install_qmldirfile
+
 RESOURCES += \
     images.qrc
