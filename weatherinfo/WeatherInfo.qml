@@ -42,11 +42,12 @@ import QtQuick 2.0
 import net.frozentux.weatherinfo 1.0
 //! [0]
 
-Item {
+Rectangle {
     id: window
 //! [0]
-    width: 360
-    height: 640
+    width: parent.width
+    height: parent.height
+    color: "black"
 
     state: "loading"
 
@@ -97,7 +98,6 @@ Item {
             }
 
 
-//! [3]
             BigForecastIcon {
                 id: current
 
@@ -107,13 +107,9 @@ Item {
                 weatherIcon: (model.hasValidWeather
                           ? model.weather.weatherIcon
                           : "01d")
-//! [3]
                 topText: (model.hasValidWeather
                           ? model.weather.temperature
                           : "??")
-                bottomText: (model.hasValidWeather
-                             ? model.weather.weatherDescription
-                             : "No weather data")
 
                 MouseArea {
                     anchors.fill: parent
@@ -121,9 +117,7 @@ Item {
                         model.refreshWeather()
                     }
                 }
-//! [4]
             }
-//! [4]
 
             Row {
                 id: iconRow

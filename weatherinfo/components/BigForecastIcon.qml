@@ -44,7 +44,6 @@ Item {
     id: current
 
     property string topText: "20*"
-    property string bottomText: "Mostly cloudy"
     property string weatherIcon: "01d"
     property real smallSide: (current.width < current.height ? current.width : current.height)
 
@@ -69,17 +68,4 @@ Item {
         height: current.smallSide
     }
 
-    Text {
-        text: current.bottomText
-        color: "white"
-        font.pointSize: 23
-        wrapMode: Text.WordWrap
-        width: parent.width
-        horizontalAlignment: Text.AlignRight
-        anchors {
-            bottom: current.bottom
-            right: current.right
-            rightMargin: 5
-        }
-    }
 }

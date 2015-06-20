@@ -4,9 +4,10 @@ import QtQuick.Controls 1.3
 import QtQuick.Controls.Styles 1.2
 
 Rectangle {
+    id: root
     color: "black"
     width: 360
-    height: 480
+    height: 400
 
     ListModel {
         id: lineModel
@@ -47,7 +48,7 @@ Rectangle {
 
             headerDelegate: Rectangle {
                 height: textItem.implicitHeight * 1.2
-                width: textItem.implicitWidth
+//                width: textItem.implicitWidth
                 color: "black"
                 Text {
                     id: textItem
@@ -64,9 +65,9 @@ Rectangle {
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 1
-                    anchors.topMargin: 1
-                    width: 1
+                    anchors.bottomMargin: 0
+                    anchors.topMargin: 0
+                    width:1
                     color: "black"
                 }
             }
@@ -85,22 +86,22 @@ Rectangle {
         TableViewColumn {
             role: "number"
             title: "No"
-            width: parent.width / 6
+            width: root.width / 6
         }
         TableViewColumn {
             role: "destination"
             title: "Destination"
-            width: (parent.width / 6) * 3
+            width: (root.width / 6) * 3
         }
         TableViewColumn {
             role: "arriving"
             title: "Arriving"
-            width: parent.width / 6
+            width: root.width / 6
         }
         TableViewColumn {
             role: "next"
             title: "Next"
-            width: (parent.width / 6)-2
+            width: (root.width / 6)-2
         }
     }
 }

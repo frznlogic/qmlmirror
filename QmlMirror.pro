@@ -6,5 +6,5 @@ SUBDIRS = weatherinfo
 SOURCES = QmlMirror.qml \
     Clock.qml \
     Weather.qml \
-    Transport.qml
-
+    Transport.qml \
+    Position.qml

@@ -15,12 +15,16 @@ ApplicationWindow {
         height: 240
     }
 
-    Weather {
+    Rectangle {
         id: weatherId
+        width: 360
+        height: 400
         anchors.top: parent.top
         anchors.right: parent.right
-        width: 360
-        height: 240
+        Weather {
+            width: 360
+            height: 400
+        }
     }
 
     Transport {
@@ -28,7 +32,7 @@ ApplicationWindow {
         anchors.top: weatherId.bottom
         anchors.right: parent.right
         width: 360
-        height: 480
+        height: 400
         color: "black"
     }
 
