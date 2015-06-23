@@ -1,12 +1,13 @@
 import QtPositioning 5.2
 import QtQuick 2.3
-
+import QtQuick.Layouts 1.1
+import QtQuick.XmlListModel 2.0
 Rectangle {
     id: root
+    color: "black"
 
     PositionSource {
         id: positionSource
-        onPositionChanged: { }
         Component.onCompleted: { positionSource.update() }
 
     }
@@ -14,22 +15,53 @@ Rectangle {
     XmlListModel {
         id: listModel
         property variant coordinate
+        property double lng: positionSource.position.coordinate.longitude
+        property double lat: positionSource.position.coordinate.latitude
 
-        source: "http://api.geonames.org/findNearbyPlaceName?" +
-                "lat=" + coordinate.latitude +
-                "&lng=" + coordinate.longitude
+        source: "http://api.geonames.org/findNearbyPlaceName?username=frznlogic&" +
+                "lat=" + lat +
+                "&lng=" + lng
         query: "/geonames/geoname"
 
 
-        XmlRole { name: "toponymName"; query: "toponymName/string()" }
-        XmlRole { name: "name"; query: "name/string()" }
-        XmlRole { name: "lat"; query: "lat/string()" }
-        XmlRole { name: "lng"; query: "lng/string()" }
+        XmlRole { name: "cityname"; query: "name/string()" }
         XmlRole { name: "geonameId"; query: "geonameId/string()" }
-        XmlRole { name: "countryCode"; query: "countryCode/string()" }
         XmlRole { name: "countryName"; query: "countryName/string()" }
         XmlRole { name: "distance"; query: "distance/string()" }
+
+        onStatusChanged: {
+            if (status == XmlListModel.Ready)
+            {
+                locationName.text = listModel.get(0).cityname
+                locationCountry.text = listModel.get(0).countryName
+            }
+        }
     }
 
+    Rectangle {
+        id: positionId
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 100
+        color:"black"
+        Text {
+            id: locationName
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignTop
+            text: "Unknown"
+            font.pointSize: 48
+            color: "white"
+        }
+        Text {
+            id: locationCountry
+            anchors.fill: parent
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignBottom
+            text: "Unknown"
+            font.pointSize: 20
+            color: "white"
+        }
+    }
 }
-

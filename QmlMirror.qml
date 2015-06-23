@@ -8,8 +8,16 @@ ApplicationWindow {
     height: 1920
     color: "black"
 
-    Clock {
+    Position {
+        id: positionId
         anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: 100
+    }
+
+    Clock {
+        anchors.top: positionId.bottom
         anchors.left: parent.left
         width: 360
         height: 240
@@ -19,7 +27,7 @@ ApplicationWindow {
         id: weatherId
         width: 360
         height: 400
-        anchors.top: parent.top
+        anchors.top: positionId.bottom
         anchors.right: parent.right
         Weather {
             width: 360
