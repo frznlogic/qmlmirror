@@ -14,3 +14,9 @@ Install instructions
 Running instructions
 --------------------
 1. qmlscene QmlMirror.qml
+
+Copyright and license
+---------------------
+Copyright (c) Oscar Andreasson 2015 unless otherwise stated. Code released 
+under MPL 2.0 license and Digia BSD license. MPL 2.0 license available in 
+LICENSE.
