@@ -6,14 +6,18 @@
  * Copyright (c) 2015 Oscar Andreasson
  */
 
-import QtQuick 2.0
-import net.frozentux.weatherinfo 1.0
+import QtQuick 2.2
+import QtQuick.Controls 1.1
+import QtQuick.Window 2.0
 
+ApplicationWindow {
+    title: qsTr("MagicMirror")
+    width: 1080
+    height: 1920
 
-Rectangle {
-    color: "black"
-    WeatherInfo {
+    QmlMirror {
+        anchors.fill: parent
 
-        id: weatherdata
     }
 }
+
