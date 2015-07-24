@@ -23,10 +23,18 @@ Rectangle {
     }
 
     Clock {
+        id: clockId
         anchors.top: positionId.bottom
         anchors.left: parent.left
         width: 360
         height: 240
+    }
+
+    Calendar {
+        anchors.top: clockId.bottom
+        anchors.left: parent.left
+        width: 360
+        height: 480
     }
 
     Rectangle {

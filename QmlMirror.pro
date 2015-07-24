@@ -16,7 +16,8 @@ SOURCES = QmlMirror.qml \
     Weather.qml \
     Transport.qml \
     Position.qml \
-    Main.qml
+    Main.qml \
+    Calendar.qml
 
 OTHER_FILES = \
     LICENSE
