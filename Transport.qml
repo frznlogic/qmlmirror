@@ -43,66 +43,94 @@ Item {
         }
     }
 
-    TableView {
-        id: tableView
+    RowLayout {
         anchors.fill: parent
-        model: lineModel
-        frameVisible: false
 
-        Component.onCompleted: {
-            console.log(root.width)
-            console.log(tableView.width)
+        Rectangle {
+            id: logo
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            height: 100
+            color: "black"
+            Image {
+                source: "Transport.png"
+                anchors.fill: parent
+                fillMode: Image.PreserveAspectFit
+
+            }
         }
 
-        style: TableViewStyle {
-            backgroundColor: "black"
-            alternateBackgroundColor: "black"
 
-            headerDelegate: Rectangle {
-                height: textItem.implicitHeight
-                width: textItem.implicitWidth
-                color: "black"
-                Text {
-                    id: textItem
-                    horizontalAlignment: Text.AlignLeft
-                    text: styleData.value
-                    font.bold: true
-                    color: "white"
-                }
+        Rectangle {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: logo.bottom
+            anchors.bottom: parent.bottom
+
+        TableView {
+            id: tableView
+            anchors.fill: parent
+            model: lineModel
+            frameVisible: false
+
+            Component.onCompleted: {
+                console.log(root.width)
+                console.log(tableView.width)
             }
 
-            itemDelegate: Rectangle {
-                color: "black"
+            style: TableViewStyle {
+                backgroundColor: "black"
+                alternateBackgroundColor: "black"
 
-                Text {
-                    id: itemText
-                    anchors.verticalCenter: parent.verticalCenter
-                    color: "white"
-                    text: styleData.value
+                headerDelegate: Rectangle {
+                    height: textItem.implicitHeight
+                    width: textItem.implicitWidth
+                    color: "black"
+                    Text {
+                        id: textItem
+                        horizontalAlignment: Text.AlignLeft
+                        text: styleData.value
+                        font.bold: true
+                        color: "white"
+                    }
                 }
+
+                itemDelegate: Rectangle {
+                    color: "black"
+
+                    Text {
+                        id: itemText
+                        anchors.verticalCenter: parent.verticalCenter
+                        color: "white"
+                        text: styleData.value
+                    }
+                }
+
             }
 
+            TableViewColumn {
+                role: "number"
+                title: "No"
+                width: tableView.width / 6
+            }
+            TableViewColumn {
+                role: "destination"
+                title: "Destination"
+                width: (tableView.width / 6) * 3
+            }
+            TableViewColumn {
+                role: "arriving"
+                title: "Arriving"
+                width: tableView.width / 6
+            }
+            TableViewColumn {
+                role: "next"
+                title: "Next"
+                width: (tableView.width / 6)
+            }
+        }
         }
 
-        TableViewColumn {
-            role: "number"
-            title: "No"
-            width: tableView.width / 6
-        }
-        TableViewColumn {
-            role: "destination"
-            title: "Destination"
-            width: (tableView.width / 6) * 3
-        }
-        TableViewColumn {
-            role: "arriving"
-            title: "Arriving"
-            width: tableView.width / 6
-        }
-        TableViewColumn {
-            role: "next"
-            title: "Next"
-            width: (tableView.width / 6)
-        }
     }
 }
