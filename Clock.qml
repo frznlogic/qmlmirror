@@ -12,7 +12,6 @@ import QtQuick.Controls 1.1
 import QtQuick.Window 2.0
 
 Rectangle {
-//    title: qsTr("Hello World")
     width: 480
     height: 200
     color: "#000000"
@@ -33,7 +32,6 @@ Rectangle {
 
         Text {
             id: time
-//            anchors.top: parent.top
             font.pointSize: 48
             font.family: "Helvetica"
             color: "#ffffff"
@@ -42,7 +40,6 @@ Rectangle {
         }
         Text {
             id: datum
-//            anchors.bottom: parent.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 24
             color: "#ffffff"
