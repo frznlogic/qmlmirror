@@ -75,24 +75,14 @@ Rectangle {
         }
 
         TableViewColumn {
-            role: "number"
-            title: "No"
+            role: "time"
+            title: "Time"
             width: tableView.width / 6
         }
         TableViewColumn {
-            role: "destination"
-            title: "Destination"
-            width: (tableView.width / 6) * 3
-        }
-        TableViewColumn {
-            role: "arriving"
-            title: "Arriving"
-            width: tableView.width / 6
-        }
-        TableViewColumn {
-            role: "next"
-            title: "Next"
-            width: (tableView.width / 6)
+            role: "heading"
+            title: "Entry"
+            width: (tableView.width / 6) * 5
         }
     }
 

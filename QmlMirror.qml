@@ -27,7 +27,6 @@ Rectangle {
         anchors.top: positionId.bottom
         anchors.left: parent.left
         width: 360
-        height: 240
     }
 
     Calendar {

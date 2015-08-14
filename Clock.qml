@@ -12,8 +12,8 @@ import QtQuick.Controls 1.1
 import QtQuick.Window 2.0
 
 Rectangle {
-    width: 480
-    height: 200
+    width: 360
+    height: 160
     color: "#000000"
     property date currDate: new Date()
 
@@ -26,24 +26,21 @@ Rectangle {
         }
     }
 
-    ColumnLayout {
-        id: layout
-        anchors.fill: parent
+    Text {
+        id: time
+        anchors.top: parent.top
+        font.pointSize: 48
+        font.family: "Helvetica"
+        color: "#ffffff"
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        Text {
-            id: time
-            font.pointSize: 48
-            font.family: "Helvetica"
-            color: "#ffffff"
-            anchors.horizontalCenter: parent.horizontalCenter
-
-        }
-        Text {
-            id: datum
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pointSize: 24
-            color: "#ffffff"
-            font.family: "Helvetica"
-        }
+    }
+    Text {
+        id: datum
+        anchors.top: time.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        font.pointSize: 24
+        color: "#ffffff"
+        font.family: "Helvetica"
     }
 }
