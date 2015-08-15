@@ -6,11 +6,23 @@ import QtQuick.Controls.Styles 1.2
 
 Rectangle {
     id: root
+    width: 360
+//    height: 700
+    color: "black"
+    anchors.horizontalCenter: parent.horizontalCenter
+
+    ListView {
+        anchors.fill: parent
+        model: calendarEntryModel
+        delegate: categoryDelegate
+    }
+
     ListModel {
         id: calendarEntryModel
 
         ListElement {
             owner: "Oscar"
+            collapsed: true
 
             subItems: [
                 ListElement { time: "09:00"; heading: "Dentist" },
@@ -22,6 +34,7 @@ Rectangle {
 
         ListElement {
             owner: "Maria"
+            collapsed: true
 
             subItems: [
                 ListElement { time: "12:00"; heading: "Lunch" },
@@ -33,58 +46,66 @@ Rectangle {
     }
 
     //  TODO: Not fixed to show nested lists
-    TableView {
-        id: tableView
-        anchors.fill: parent
-        model: calendarEntryModel
-        frameVisible: false
+    Component {
+        id: categoryDelegate
+        Column {
+            width: root.width
 
-        Component.onCompleted: {
-            console.log(root.width)
-            console.log(tableView.width)
-        }
-
-        style: TableViewStyle {
-            backgroundColor: "black"
-            alternateBackgroundColor: "black"
-
-            headerDelegate: Rectangle {
-                height: textItem.implicitHeight
-                width: textItem.implicitWidth
+            Rectangle {
+                id: categoryItem
                 color: "black"
-                Text {
-                    id: textItem
-                    horizontalAlignment: Text.AlignLeft
-                    text: styleData.value
-                    font.bold: true
-                    color: "white"
-                }
-            }
-
-            itemDelegate: Rectangle {
-                color: "black"
+                height: 50
+                width: root.width
 
                 Text {
-                    id: itemText
                     anchors.verticalCenter: parent.verticalCenter
+                    x: 15
+                    font.pixelSize: 24
                     color: "white"
-                    text: styleData.value
+                    text: owner
+                }
+                Component.onCompleted: {
+                    calendarEntryModel.setProperty(index, "collapsed", !collapsed)
                 }
             }
 
-        }
+            Loader {
+                id: subItemLoader
 
-        TableViewColumn {
-            role: "time"
-            title: "Time"
-            width: tableView.width / 6
-        }
-        TableViewColumn {
-            role: "heading"
-            title: "Entry"
-            width: (tableView.width / 6) * 5
+                visible: !collapsed
+                property variant subItemModel: subItems
+                sourceComponent: collapsed ? null : subItemColumnDelegate
+                onStatusChanged: if (status == Loader.Ready) item.model = subItemModel
+            }
         }
     }
 
+    Component {
+        id: subItemColumnDelegate
+
+        Column {
+            property alias model: subItemRepeater.model
+            width: root.width
+
+            Repeater {
+                id: subItemRepeater
+                delegate: Rectangle {
+                    color: "black"
+                    height: 24
+                    width: root.width
+                    border.color: "black"
+                    border.width: 2
+
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        x: 30
+                        font.pixelSize: 18
+                        color: "white"
+                        text: time + " " + heading
+                    }
+                }
+            }
+        }
+    }
 }
 
