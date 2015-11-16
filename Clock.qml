@@ -11,10 +11,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.1
 import QtQuick.Window 2.0
 
-Rectangle {
-    width: 360
-    height: 160
-    color: "#000000"
+MirrorWindow {
     property date currDate: new Date()
 
     Timer {
@@ -32,13 +29,15 @@ Rectangle {
         font.pointSize: 48
         font.family: "Helvetica"
         color: "#ffffff"
-        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
+        x: 5
 
     }
     Text {
         id: datum
         anchors.top: time.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
+        x: 5
         font.pointSize: 24
         color: "#ffffff"
         font.family: "Helvetica"

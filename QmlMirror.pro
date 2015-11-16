@@ -6,18 +6,22 @@
 # Copyright (c) 2015 Oscar Andreasson
 #
 
-TEMPLATE = subdirs
+TEMPLATE = app
 
 SUBDIRS = weatherinfo
 
+OTHER_FILES = \
+    LICENSE
 
-SOURCES = QmlMirror.qml \
+DISTFILES += \
+    TaskWarrior.qml \
+    QmlMirror.qml \
     Clock.qml \
     Weather.qml \
     Transport.qml \
     Position.qml \
     Main.qml \
-    Calendar.qml
-
-OTHER_FILES = \
-    LICENSE
+    Calendar.qml \
+    lala.qml \
+    MirrorText.qml \
+    MirrorWindow.qml

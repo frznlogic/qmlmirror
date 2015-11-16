@@ -6,10 +6,11 @@ import QtQuick.Controls.Styles 1.2
 
 Rectangle {
     id: root
-    width: 360
+//    width: 360
 //    height: 700
     color: "black"
     anchors.horizontalCenter: parent.horizontalCenter
+    anchors.verticalCenter: parent.verticalCenter
 
     ListView {
         anchors.fill: parent
@@ -58,12 +59,21 @@ Rectangle {
                 width: root.width
 
                 Text {
+                    id: textElement
                     anchors.verticalCenter: parent.verticalCenter
-                    x: 15
+                    x: 5
                     font.pixelSize: 24
                     color: "white"
                     text: owner
                 }
+                Rectangle {
+                    anchors.top: textElement.bottom
+                    width: textElement.width
+                    height: 2
+                    x: 5
+                    color: "white"
+                }
+
                 Component.onCompleted: {
                     calendarEntryModel.setProperty(index, "collapsed", !collapsed)
                 }
@@ -98,10 +108,10 @@ Rectangle {
 
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
-                        x: 30
+                        x: 0
                         font.pixelSize: 18
                         color: "white"
-                        text: time + " " + heading
+                        text: time + "\t" + heading
                     }
                 }
             }
