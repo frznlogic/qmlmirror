@@ -8,6 +8,7 @@
 
 import QtQuick 2.2
 import QtQuick.Controls 1.1
+import QtQuick.Layouts 1.1
 import QtQuick.Window 2.0
 
 Rectangle {
@@ -22,38 +23,30 @@ Rectangle {
         height: 100
     }
 
-    Clock {
-        id: clockId
-        anchors.top: positionId.bottom
-        anchors.left: parent.left
-        width: 360
-    }
-
-    Calendar {
-        anchors.top: clockId.bottom
-        anchors.left: parent.left
-        width: 360
-        height: 480
-    }
 
     Rectangle {
-        id: weatherId
-        width: 360
-        height: 400
         anchors.top: positionId.bottom
-        anchors.right: parent.right
-        Weather {
-            width: 360
-            height: 400
+        width: 1080
+        Row {
+            Column {
+                Clock {
+                }
+                TaskWarrior {
+                }
+            }
+
+            Column {
+                MirrorWindow {}
+            }
+
+            Column {
+                Weather {
+                }
+
+                Transport {
+                    id: transportId
+                }
+            }
         }
     }
-
-    Transport {
-        id: transportId
-        anchors.top: weatherId.bottom
-        anchors.right: parent.right
-        width: 360
-        height: 400
-    }
-
 }

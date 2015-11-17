@@ -24,4 +24,6 @@ DISTFILES += \
     Calendar.qml \
     lala.qml \
     MirrorText.qml \
-    MirrorWindow.qml
+    MirrorWindow.qml \
+    JSONListModel.qml \
+    jsonpath.js

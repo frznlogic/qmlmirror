@@ -11,8 +11,9 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.3
 import QtQuick.Controls.Styles 1.2
 
-Item {
+MirrorWindow {
     id: root
+    windowHeight: 3
 
     ListModel {
         id: lineModel

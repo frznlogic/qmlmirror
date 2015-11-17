@@ -297,6 +297,9 @@ void AppModel::queryCity()
     query.addQueryItem("lat", latitude);
     query.addQueryItem("lon", longitude);
     query.addQueryItem("mode", "json");
+    query.addQueryItem("APPID", "42c2f93b39eed8f38f08e8ddc321d98f");
+
+
     url.setQuery(query);
     qCDebug(requestsLog) << "submitting request";
 
@@ -324,7 +327,7 @@ void AppModel::positionError(QGeoPositionInfoSource::Error e)
 
 void AppModel::hadError(bool tryAgain)
 {
-    qCDebug(requestsLog) << "hadError, will " << (tryAgain ? "" : "not ") << "rety";
+    qCDebug(requestsLog) << "hadError, will " << (tryAgain ? "" : "not ") << "retry";
     d->throttle.start();
     if (d->nErrors < 10)
         ++d->nErrors;
@@ -377,6 +380,8 @@ void AppModel::refreshWeather()
 
     query.addQueryItem("q", d->city);
     query.addQueryItem("mode", "json");
+    query.addQueryItem("APPID", "42c2f93b39eed8f38f08e8ddc321d98f");
+
     url.setQuery(query);
 
     QNetworkReply *rep = d->nam->get(QNetworkRequest(url));
@@ -435,6 +440,7 @@ void AppModel::handleWeatherNetworkData(QObject *replyObj)
     query.addQueryItem("q", d->city);
     query.addQueryItem("mode", "json");
     query.addQueryItem("cnt", "5");
+    query.addQueryItem("APPID", "42c2f93b39eed8f38f08e8ddc321d98f");
     url.setQuery(query);
 
     QNetworkReply *rep = d->nam->get(QNetworkRequest(url));

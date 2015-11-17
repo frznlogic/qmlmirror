@@ -4,8 +4,7 @@ import QtQuick 2.2
 
 Rectangle {
     id: root
-    anchors.fill: parent
-    color: "white"
+    color: "black"
 
     property string fileName: "jsondata.txt"
 
@@ -23,6 +22,7 @@ Rectangle {
 
         delegate: Text {
                 text: model.description
+                color: "white"
                 Component.onCompleted: {
                     console.log("Text: " + text)
                 }

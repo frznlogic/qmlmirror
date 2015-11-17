@@ -4,13 +4,11 @@ import QtQuick.Controls 1.3
 import QtQuick.Controls.Styles 1.2
 
 
-Rectangle {
+MirrorWindow {
     id: root
-//    width: 360
-//    height: 700
     color: "black"
-    anchors.horizontalCenter: parent.horizontalCenter
-    anchors.verticalCenter: parent.verticalCenter
+    windowHeight: 3
+    windowWidth: 1
 
     ListView {
         anchors.fill: parent
