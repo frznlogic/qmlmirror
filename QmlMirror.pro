@@ -22,7 +22,6 @@ DISTFILES += \
     Position.qml \
     Main.qml \
     Calendar.qml \
-    lala.qml \
     MirrorText.qml \
     MirrorWindow.qml \
     JSONListModel.qml \
