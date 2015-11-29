@@ -1,6 +1,6 @@
 import QtQuick 2.2
 
-//import net.frozentux.qmlcomponents 1.0
+import net.frozentux.qmlcomponents 1.0
 
 Rectangle {
     id: root
@@ -10,7 +10,23 @@ Rectangle {
 
     JSONListModel {
         id: jsonModel
-        source: "jsondata.txt"
+        source: fileName
+    }
+
+    TaskWarrior {
+        id: taskwarrior
+        jsonFile: fileName
+    }
+
+    Timer {
+        repeat: true
+        interval: 5*60*1000
+        running: true
+        triggeredOnStart: true
+
+        onTriggered: {
+            taskwarrior.sync()
+        }
     }
 
 
