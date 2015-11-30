@@ -13,6 +13,6 @@ Text {
     anchors.top: parent.top
     font.pointSize: 48
     font.family: "Helvetica"
-    color: "#ffffff"
+    color: "white"
     //anchors.horizontalCenter: parent.horizontalCenter
 }

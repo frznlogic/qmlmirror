@@ -12,8 +12,10 @@ import QtQuick.Layouts 1.1
 import QtQuick.Window 2.0
 
 Rectangle {
-    anchors.fill: parent
+    id: root
     color: "black"
+    width: 1080
+    height: 1980
 
     Position {
         id: positionId
@@ -26,7 +28,8 @@ Rectangle {
 
     Rectangle {
         anchors.top: positionId.bottom
-        width: 1080
+        width: root.width
+        height: root.width-positionId.width
         Row {
             Column {
                 Clock {
