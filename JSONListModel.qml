@@ -15,7 +15,11 @@ Item {
     property ListModel model : ListModel { id: jsonModel }
     property alias count: jsonModel.count
 
-    onSourceChanged: {
+    onSourceChanged: fetchJSONModel()
+    onJsonChanged: updateJSONModel()
+    onQueryChanged: updateJSONModel()
+
+    function fetchJSONModel() {
         var xhr = new XMLHttpRequest;
         xhr.open("GET", source);
         xhr.onreadystatechange = function() {
@@ -24,9 +28,6 @@ Item {
         }
         xhr.send();
     }
-
-    onJsonChanged: updateJSONModel()
-    onQueryChanged: updateJSONModel()
 
     function updateJSONModel() {
         jsonModel.clear();

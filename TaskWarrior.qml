@@ -14,16 +14,20 @@ Rectangle {
     id: root
     color: "black"
 
-    property string fileName: "jsondata.txt"
+    property string fileName: "/home/oan/Projects/private/QmlMirror/QmlMirror/jsondata.txt"
 
     JSONListModel {
         id: jsonModel
-        source: fileName
+        source: root.fileName
     }
 
     TaskWarrior {
         id: taskwarrior
         jsonFile: fileName
+
+        onJsonFileChanged: {
+            jsonModel.fetchJSONModel()
+        }
     }
 
     Timer {
