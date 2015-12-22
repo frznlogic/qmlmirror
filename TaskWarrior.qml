@@ -10,7 +10,7 @@ import QtQuick 2.2
 
 import net.frozentux.qmlcomponents 1.0
 
-Rectangle {
+MirrorWindow {
     id: root
     color: "black"
 
@@ -51,8 +51,8 @@ Rectangle {
         delegate: Text {
                 text: model.description
                 color: "white"
+                wrapMode: Text.Wrap
                 Component.onCompleted: {
-                    console.log("Text: " + text)
                 }
         }
     }

@@ -38,7 +38,6 @@ Item {
         var objectArray = parseJSONString(json, query);
         for ( var key in objectArray ) {
             var jo = objectArray[key];
-            console.log(jo);
             jsonModel.append( jo );
         }
     }
