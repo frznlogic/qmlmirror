@@ -6,7 +6,7 @@
 # Copyright (c) 2015 Oscar Andreasson
 #
 
-TEMPLATE = app
+TEMPLATE = subdirs
 
 SUBDIRS = weatherinfo
 
