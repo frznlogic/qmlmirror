@@ -12,8 +12,8 @@ import QtQuick.Window 2.0
 
 ApplicationWindow {
     title: qsTr("MagicMirror")
-    width: 1024
-    height: 1280
+    width: 1080
+    height: 1920
 
     QmlMirror {
         anchors.fill: parent
