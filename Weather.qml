@@ -11,11 +11,14 @@ import net.frozentux.weatherinfo 1.0
 
 
 MirrorWindow {
+    id: root
     color: "black"
     windowHeight: 3
 
     WeatherInfo {
-
         id: weatherdata
+
+        width: root.width
+        height: root.height
     }
 }
