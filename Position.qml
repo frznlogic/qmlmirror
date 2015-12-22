@@ -6,10 +6,11 @@
  * Copyright (c) 2015 Oscar Andreasson
  */
 
-import QtPositioning 5.2
+import QtPositioning 5.4
 import QtQuick 2.3
 import QtQuick.Layouts 1.1
 import QtQuick.XmlListModel 2.0
+
 Rectangle {
     id: root
     color: "black"
